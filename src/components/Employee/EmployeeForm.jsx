@@ -89,96 +89,102 @@ export default function EmployeeForm({ onSubmit, initialData, isEditing }) {
   };
   
   return (
-    <div className="bg-white p-6 rounded-lg shadow-md">
-      <h2 className="text-2xl font-semibold mb-6">{isEditing ? 'Edit Employee' : 'Add New Employee'}</h2>
+    <div className="bg-white p-4 sm:p-6 rounded-lg shadow-md">
+      <h2 className="text-xl sm:text-2xl font-semibold mb-6">{isEditing ? 'Edit Employee' : 'Add New Employee'}</h2>
       
       <form onSubmit={handleSubmit}>
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-          <div>
-            <label className="block text-gray-700 text-sm font-bold mb-2">
-              Name *
-            </label>
-            <input
-              type="text"
-              name="name"
-              value={employee.name}
-              onChange={handleChange}
-              className="w-full px-3 py-2 border border-gray-300 rounded"
-              required
-            />
+        <div className="grid grid-cols-1 gap-4 sm:gap-6">
+          <div className="sm:grid sm:grid-cols-2 sm:gap-4">
+            <div className="mb-4 sm:mb-0">
+              <label className="block text-gray-700 text-sm font-bold mb-2">
+                Name *
+              </label>
+              <input
+                type="text"
+                name="name"
+                value={employee.name}
+                onChange={handleChange}
+                className="w-full px-3 py-2 border border-gray-300 rounded"
+                required
+              />
+            </div>
+            
+            <div className="mb-4 sm:mb-0">
+              <label className="block text-gray-700 text-sm font-bold mb-2">
+                Position *
+              </label>
+              <input
+                type="text"
+                name="position"
+                value={employee.position}
+                onChange={handleChange}
+                className="w-full px-3 py-2 border border-gray-300 rounded"
+                required
+              />
+            </div>
+          </div>
+          
+          <div className="sm:grid sm:grid-cols-2 sm:gap-4">
+            <div className="mb-4 sm:mb-0">
+              <label className="block text-gray-700 text-sm font-bold mb-2">
+                Employee ID *
+              </label>
+              <input
+                type="text"
+                name="employeeId"
+                value={employee.employeeId}
+                onChange={handleChange}
+                className="w-full px-3 py-2 border border-gray-300 rounded"
+                required
+                disabled={isEditing}
+              />
+            </div>
+            
+            <div className="mb-4 sm:mb-0">
+              <label className="block text-gray-700 text-sm font-bold mb-2">
+                Email *
+              </label>
+              <input
+                type="email"
+                name="email"
+                value={employee.email}
+                onChange={handleChange}
+                className="w-full px-3 py-2 border border-gray-300 rounded"
+                required
+              />
+            </div>
+          </div>
+          
+          <div className="sm:grid sm:grid-cols-2 sm:gap-4">
+            <div className="mb-4 sm:mb-0">
+              <label className="block text-gray-700 text-sm font-bold mb-2">
+                Phone *
+              </label>
+              <input
+                type="tel"
+                name="phone"
+                value={employee.phone}
+                onChange={handleChange}
+                className="w-full px-3 py-2 border border-gray-300 rounded"
+                required
+              />
+            </div>
+            
+            <div className="mb-4 sm:mb-0">
+              <label className="block text-gray-700 text-sm font-bold mb-2">
+                Joining Date
+              </label>
+              <input
+                type="date"
+                name="joiningDate"
+                value={employee.joiningDate}
+                onChange={handleChange}
+                className="w-full px-3 py-2 border border-gray-300 rounded"
+              />
+            </div>
           </div>
           
           <div>
-            <label className="block text-gray-700 text-sm font-bold mb-2">
-              Position *
-            </label>
-            <input
-              type="text"
-              name="position"
-              value={employee.position}
-              onChange={handleChange}
-              className="w-full px-3 py-2 border border-gray-300 rounded"
-              required
-            />
-          </div>
-          
-          <div>
-            <label className="block text-gray-700 text-sm font-bold mb-2">
-              Employee ID *
-            </label>
-            <input
-              type="text"
-              name="employeeId"
-              value={employee.employeeId}
-              onChange={handleChange}
-              className="w-full px-3 py-2 border border-gray-300 rounded"
-              required
-              disabled={isEditing} // Can't change employeeId when editing
-            />
-          </div>
-          
-          <div>
-            <label className="block text-gray-700 text-sm font-bold mb-2">
-              Email *
-            </label>
-            <input
-              type="email"
-              name="email"
-              value={employee.email}
-              onChange={handleChange}
-              className="w-full px-3 py-2 border border-gray-300 rounded"
-              required
-            />
-          </div>
-          
-          <div>
-            <label className="block text-gray-700 text-sm font-bold mb-2">
-              Phone *
-            </label>
-            <input
-              type="tel"
-              name="phone"
-              value={employee.phone}
-              onChange={handleChange}
-              className="w-full px-3 py-2 border border-gray-300 rounded"
-              required
-            />
-          </div>
-          
-          <div>
-            <label className="block text-gray-700 text-sm font-bold mb-2">
-              Joining Date
-            </label>
-            <input
-              type="date"
-              name="joiningDate"
-              value={employee.joiningDate}
-              onChange={handleChange}
-              className="w-full px-3 py-2 border border-gray-300 rounded"
-            />
-          </div>
-          
-          <div className="md:col-span-2">
             <label className="block text-gray-700 text-sm font-bold mb-2">
               Address
             </label>
@@ -191,7 +197,7 @@ export default function EmployeeForm({ onSubmit, initialData, isEditing }) {
             ></textarea>
           </div>
           
-          <div className="md:col-span-2">
+          <div>
             <label className="block text-gray-700 text-sm font-bold mb-2">
               Profile Image
             </label>
@@ -199,24 +205,26 @@ export default function EmployeeForm({ onSubmit, initialData, isEditing }) {
               type="file"
               name="profileImage"
               onChange={handleImageChange}
-              className="w-full p-2 border border-gray-300 rounded"
+              className="w-full p-2 border border-gray-300 rounded text-sm"
               accept="image/*"
             />
             
             {preview && (
-              <div className="mt-4">
-                <p className="text-sm font-medium text-gray-700 mb-2">Image Preview:</p>
-                <img 
-                  src={preview} 
-                  alt="Profile preview" 
-                  className="w-40 h-40 object-cover border rounded" 
-                />
+              <div className="mt-4 flex justify-center sm:justify-start">
+                <div>
+                  <p className="text-sm font-medium text-gray-700 mb-2">Image Preview:</p>
+                  <img 
+                    src={preview} 
+                    alt="Profile preview" 
+                    className="w-32 h-32 sm:w-40 sm:h-40 object-cover border rounded" 
+                  />
+                </div>
               </div>
             )}
           </div>
         </div>
         
-        <div className="mt-8">
+        <div className="mt-6 sm:mt-8 flex justify-center sm:justify-start">
           <button
             type="submit"
             className="bg-blue-600 text-white py-2 px-6 rounded hover:bg-blue-700"

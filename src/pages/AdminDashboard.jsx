@@ -171,14 +171,14 @@ export default function AdminDashboard() {
   };
 
   return (
-    <div>
-      <div className="flex justify-between items-center mb-6">
-        <h1 className="text-3xl font-bold text-gray-800">Admin Dashboard</h1>
+    <div className="px-2 sm:px-0">
+      <div className="flex flex-col sm:flex-row sm:justify-between sm:items-center mb-6">
+        <h1 className="text-2xl sm:text-3xl font-bold text-gray-800 mb-4 sm:mb-0">Admin Dashboard</h1>
         
         {!showForm && (
           <button
             onClick={handleAddEmployee}
-            className="bg-blue-600 hover:bg-blue-700 text-white py-2 px-4 rounded flex items-center"
+            className="bg-blue-600 hover:bg-blue-700 text-white py-2 px-4 rounded flex items-center justify-center sm:justify-start"
           >
             <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5 mr-2" viewBox="0 0 20 20" fill="currentColor">
               <path fillRule="evenodd" d="M10 5a1 1 0 011 1v3h3a1 1 0 110 2h-3v3a1 1 0 11-2 0v-3H6a1 1 0 110-2h3V6a1 1 0 011-1z" clipRule="evenodd" />

@@ -28,7 +28,7 @@ export default function App() {
   return (
     <Router>
       <Navbar isAuthenticated={isAuthenticated} onLogout={handleLogout} />
-      <div className="container mx-auto px-4 py-8">
+      <div className="container mx-auto px-3 py-4 sm:px-4 sm:py-8">
         <Routes>
           <Route path="/" element={<Home />} />
           <Route path="/employee/:id" element={<QrRedirect />} />

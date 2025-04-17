@@ -48,11 +48,11 @@ export default function QrRedirect() {
   }
 
   return (
-    <div className="py-8 px-4">
+    <div className="py-6 px-3 sm:py-8 sm:px-4">
       <div className="max-w-xl mx-auto">
-        <div className="mb-6 text-center">
-          <h1 className="text-2xl font-bold text-gray-800">Employee Digital ID</h1>
-          <p className="text-gray-600">Scan result for employee #{id}</p>
+        <div className="mb-4 sm:mb-6 text-center">
+          <h1 className="text-xl sm:text-2xl font-bold text-gray-800">Employee Digital ID</h1>
+          <p className="text-gray-600 text-sm sm:text-base">Scan result for employee #{id}</p>
         </div>
         
         <EmployeeCard employee={employee} isDigitalCard={true} />
